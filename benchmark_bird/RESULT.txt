@@ -1,0 +1,33 @@
+$ bash ./run/run_evaluation.sh
+starting to compare with knowledge for ex
+start calculate
+                     simple               moderate             challenging          total
+count                925                  465                  144                  1534
+======================================    ACCURACY    =====================================
+accuracy             65.41                49.46                39.58                58.15
+===========================================================================================
+Finished evaluation
+starting to compare without knowledge for ex
+start calculate
+                     simple               moderate             challenging          total
+count                925                  465                  144                  1534
+======================================    ACCURACY    =====================================
+accuracy             65.41                49.46                39.58                58.15
+===========================================================================================
+Finished evaluation
+
+start calculate
+                     simple               moderate             challenging          total               
+count                925                  465                  144                  1534                
+======================================    ACCURACY    =====================================
+accuracy             65.41                49.46                39.58                58.15               
+===========================================================================================
+Finished evaluation
+starting to compare without knowledge for ex
+start calculate
+                     simple               moderate             challenging          total               
+count                925                  465                  144                  1534                
+======================================    ACCURACY    =====================================
+accuracy             3.35                 2.37                 1.39                 2.87                
+===========================================================================================
+Finished evaluation

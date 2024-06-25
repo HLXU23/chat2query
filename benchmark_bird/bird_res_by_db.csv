@@ -1,0 +1,12 @@
+db_id,simple q count,simple accuracy,moderate q count,moderate accuracy,challenging q count,challenging accuracy,total q count,total accuracy
+california_schools,54,55.56,30,20.00,5,20.00,89,41.57
+financial,63,58.73,37,29.73,6,16.67,106,46.23
+toxicology,76,69.74,38,57.89,31,41.94,145,60.69
+card_games,125,48.80,53,35.85,13,38.46,191,44.50
+codebase_community,151,69.54,30,40.00,5,0.00,186,62.90
+superhero,81,82.72,33,93.94,15,60.00,129,82.95
+formula_1,117,47.86,43,41.86,14,21.43,174,44.25
+european_football_2,65,72.31,50,56.00,14,57.14,129,64.34
+thrombosis_prediction,49,69.39,86,50.00,28,39.29,163,53.99
+student_club,101,80.20,48,70.83,9,66.67,158,76.58
+debit_card_specializing,43,74.42,17,41.18,4,0.00,64,60.94
