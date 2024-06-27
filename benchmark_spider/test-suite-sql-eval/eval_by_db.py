@@ -528,7 +528,6 @@ def save_csv(scores, file_path):
 
 
 def evaluate(gold, predict, db_dir, etype, kmaps, plug_value, keep_distinct, progress_bar_for_each_datapoint, res_csv_path, detail_json_path):
-
     with open(gold) as f:
         glist = []
         gseq_one = []
@@ -585,6 +584,7 @@ def evaluate(gold, predict, db_dir, etype, kmaps, plug_value, keep_distinct, pro
             scores[level]['partial'][type_] = {'acc': 0., 'rec': 0., 'f1': 0.,'acc_count':0,'rec_count':0}
 
     scores['db'] = {}
+    exec_result = []
 
     for i, (p, g) in enumerate(zip(plist, glist)):
         if (i + 1) % 10 == 0:
@@ -649,6 +649,12 @@ def evaluate(gold, predict, db_dir, etype, kmaps, plug_value, keep_distinct, pro
             if etype in ["all", "exec"]:
                 exec_score = eval_exec_match(db=db, p_str=p_str, g_str=g_str, plug_value=plug_value,
                                              keep_distinct=keep_distinct, progress_bar_for_each_datapoint=progress_bar_for_each_datapoint)
+                result = {}
+                result['db'] = db
+                result['pre_sql'] = p_str
+                result['grd_sql'] = g_str
+                result['res'] = exec_score
+                exec_result.append(result)
                 if exec_score:
                     scores[hardness]['exec'] += 1
                     scores[turn_id]['exec'] += 1
@@ -794,6 +800,7 @@ def evaluate(gold, predict, db_dir, etype, kmaps, plug_value, keep_distinct, pro
     #         tmp += scores['db'][db][level]['count']
     #     print(level, tmp)
 
+    write_json(detail_json_path, exec_result)
     save_csv(scores, res_csv_path)
 
 
@@ -1003,6 +1010,9 @@ def build_foreign_key_map_from_json(table):
         tables[entry['db_id']] = build_foreign_key_map(entry)
     return tables
 
+def write_json(dir, json_data):
+    with open(dir, 'w', encoding='utf-8') as file:
+        json.dump(json_data, file, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
