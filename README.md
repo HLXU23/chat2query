@@ -18,7 +18,7 @@ cd benchmark_bird
 - sp_parse_cases.py  
 similar with parse_cases.py  
 - eval_by_db.py
-1. Write evaluation details into detail_json_path (to be updated)
+1. Write evaluation details into detail_json_path
 2. Save evaluation results by database into res_csv_path  
 Run: 
 ```

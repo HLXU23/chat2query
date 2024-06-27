@@ -1,5 +1,5 @@
-gold='./spider/test_data/dev_gold.sql'
-pred='./result/predict_dev.txt'
+gold='./spider/train_selected/train_selected_gold.sql'
+pred='./result/predict_selected.txt'
 db='./spider/test_database/'
 res_csv_path='./spider_res_by_db.csv'
 detail_json_path='./spider_res_detail.json'
